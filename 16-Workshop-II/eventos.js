@@ -10,7 +10,6 @@ function compraTotal(productosDelStorage) {
     } else {
         parrafoCompra.innerHTML = `Importe total $${new Intl.NumberFormat("de-DE").format(acumulador)}`
     }
-   
 }
 
 function cargarEventosModal(productosDelStorage) {
@@ -60,24 +59,24 @@ function cargarProductosModal(productosDelStorage) {
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="./img/${productoCarrito.img}" class="img-fluid rounded-start" alt="...">
-                </div>
-            <div class="col-md-8">
-                <div class="card-body">
-               
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
 
-                <h5 class="card-title">${productoCarrito.nombre}</h5>
-                <div class="row">
-                    <p class="card-text">Cantidad: ${productoCarrito.cant}</p>
-                    <button class= "btn btn-outline-secondary" id="sum${indice}"><i class="fas fa-plus"></i></button>
-                    <button class= "btn btn-outline-secondary" id="rest${indice}"><i class="fas fa-minus"></i></button> 
+
+                            <h5 class="card-title">${productoCarrito.nombre}</h5>
+                            <div class="row">
+                                <p class="card-text">Cantidad: ${productoCarrito.cant}</p>
+                                <button class= "btn btn-outline-secondary" id="sum${indice}"><i class="fas fa-plus"></i></button>
+                                <button class= "btn btn-outline-secondary" id="rest${indice}"><i class="fas fa-minus"></i></button> 
+                            </div>
+                            <p class="card-text">$${new Intl.NumberFormat("de-DE").format(productoCarrito.precio * productoCarrito.cant)}</p> 
+                            <button class= "btn btn-danger" id="botonEliminar${indice}"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <p class="card-text">$${new Intl.NumberFormat("de-DE").format(productoCarrito.precio * productoCarrito.cant)}</p> 
-                <button class= "btn btn-danger" id="botonEliminar${indice}"><i class="fas fa-trash-alt"></i></button>
             </div>
-            </div>
-            </div>
-        </div>
-    `
+        `
 })
 cargarEventosModal(productosDelStorage)
 compraTotal(productosDelStorage)
